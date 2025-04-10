@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subhadip Patra | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0ea5e9;
+      --bg-light: linear-gradient(to bottom right, #f0f9ff, #e0f2fe);
+      --bg-dark: #0f172a;
+      --text-light: #1e293b;
+      --text-dark: #f1f5f9;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-light);
+      color: var(--text-light);
+      scroll-behavior: smooth;
+      transition: background 0.4s, color 0.4s;
+    }
+    .dark-mode {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+    header, section, footer {
+      padding: 2rem;
+      max-width: 960px;
+      margin: auto;
+    }
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      animation: zoomIn 1s ease-out;
+    }
+    h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      border-left: 4px solid var(--primary);
+      padding-left: 1rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    p, ul {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .hero p {
+      text-align: center;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .buttons {
+      text-align: center;
+    }
+    .buttons a {
+      display: inline-block;
+      margin: 0.25rem;
+      padding: 0.5rem 1.25rem;
+      border: 2px solid var(--primary);
+      border-radius: 12px;
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .buttons a:hover {
+      background: var(--primary);
+      color: white;
+    }
+    .project {
+      background: white;
+      padding: 1rem 1.5rem;
+      border-radius: 1rem;
+      border-left: 4px solid var(--primary);
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    .dark-mode .project {
+      background: #1e293b;
+    }
+    .project:hover {
+      transform: translateY(-6px);
+    }
+    footer {
+      text-align: center;
+      font-size: 0.875rem;
+      margin-top: 3rem;
+      color: #64748b;
+    }
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 0.4rem 1rem;
+      cursor: pointer;
+      z-index: 999;
+    }
+    .typewriter-text {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid var(--primary);
+      animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">Dark Mode</button>
+  <header class="hero">
+    <h1 class="typewriter-text">Subhadip Patra</h1>
+    <p>Crafting intelligent systems with code & creativity</p>
+    <div class="buttons">
+      <a href="https://github.com/Subhadip9734" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/subhadip-patra-348263287/" target="_blank">LinkedIn</a>
+      <a href="mailto:patrasubhadip9734@gmail.com">Email</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <p>
+      I’m a results-driven developer currently working at Infosys as a Specialist Programmer. I specialize in Python, Flask, MySQL, and modern ML/NLP solutions. My strength lies in building intelligent web apps and deploying scalable backend systems. Passionate about AI, data science, and solving real-world problems with technology.
+    </p>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>🛒 E-commerce Cart Abandonment Predictor</h3>
+      <p>Predicts cart abandonment using session data (85% accuracy). Flask backend with ML model + SendGrid API for email reminders.</p>
+      <ul>
+        <li>Real-time inference via Flask</li>
+        <li>MySQL schema for logs, predictions</li>
+        <li>SendGrid email notifications</li>
+      </ul>
+    </div>
+    <div class="project">
+      <h3>📰 AI-Powered News Summarizer</h3>
+      <p>Built with Flask, Transformers & BeautifulSoup. Pulls real-time news, summarizes with NLP, and classifies sentiment & category.</p>
+      <ul>
+        <li>Abstractive summaries via Transformers</li>
+        <li>Sentiment & category classification</li>
+        <li>User-friendly frontend for browsing</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    <p><strong>Specialist Programmer</strong> @ Infosys, Bangalore — <em>Nov 2024 - Present</em></p>
+    <ul>
+      <li>Developed Flask-based internal tools for 1K+ users</li>
+      <li>Integrated ML/NLP solutions into live systems</li>
+      <li>Optimized MySQL data pipelines and performance</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <p>🎓 B.Tech in Computer Science and Engineering, University of Engineering & Management, Kolkata — <strong>GPA: 8.02/10</strong></p>
+  </section>
+
+  <section style="text-align: center">
+    <h2>Contact</h2>
+    <p>📧 patrasubhadip9734@gmail.com</p>
+    <p>📞 +91 8967171672</p>
+    <a href="/Subhadip_Patra_Resume04102025.pdf" download style="display:inline-block;margin-top:1rem;text-decoration:none;color:var(--primary);border-bottom:2px solid var(--primary);">Download Resume</a>
+  </section>
+
+  <footer>
+    &copy; 2025 Subhadip Patra. All rights reserved.
+  </footer>
+
+  <button class="back-to-top" onclick="scrollToTop()">↑</button>
+
+  <script>
+    window.onscroll = function () {
+      document.querySelector('.back-to-top').style.display = (window.scrollY > 100) ? 'flex' : 'none';
+    };
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+</body>
+</html>
